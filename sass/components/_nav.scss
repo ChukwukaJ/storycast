@@ -1,0 +1,60 @@
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: $space-4;
+    max-width: $max-width-wide;
+    margin-inline: auto;
+    padding-inline: $space-6;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: $text-xl;
+    font-weight: $weight-bold;
+    color: $color-accent;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  &__links {
+    display: flex;
+    gap: $space-8;
+    list-style: none;
+
+    @media (max-width: 600px) {
+      gap: $space-4;
+    }
+  }
+
+  &__link {
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $color-text-primary;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &:hover,
+    &[aria-current="page"] {
+      color: $color-accent;
+    }
+
+    &[aria-current="page"] {
+      border-bottom: 2px solid $color-accent;
+      padding-bottom: 2px;
+    }
+  }
+}

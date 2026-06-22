@@ -1,0 +1,107 @@
+// Tokens
+@use 'tokens/colors' as *;
+@use 'tokens/typography' as *;
+@use 'tokens/spacing' as *;
+
+// Layout
+@use 'layout/grid';
+
+// Components
+@use 'components/nav';
+@use 'components/hero';
+@use 'components/media-card';
+@use 'components/footer';
+
+// Base reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: $font-body;
+  background-color: $color-bg;
+  color: $color-text-primary;
+  line-height: $leading-normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $space-4;
+  background: $color-accent;
+  color: $color-bg;
+  padding: $space-2 $space-4;
+  font-weight: $weight-bold;
+  z-index: 9999;
+  border-radius: $radius-sm;
+
+  &:focus {
+    top: $space-4;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+  border-radius: $radius-sm;
+}
+
+a {
+  color: $color-accent;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-accent-alt;
+  }
+}
+
+.section-label {
+  font-family: $font-mono;
+  font-size: $text-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: $color-text-muted;
+  margin-bottom: $space-6;
+  padding-bottom: $space-3;
+  border-bottom: 1px solid $color-border;
+}
+
+.transcript {
+  background: $color-transcript;
+  border-left: 3px solid $color-accent;
+  border-radius: $radius-md;
+  padding: $space-6;
+  font-family: $font-mono;
+  font-size: $text-sm;
+  line-height: $leading-loose;
+  color: $color-text-muted;
+  max-height: 400px;
+  overflow-y: auto;
+
+  p { margin-bottom: $space-4; }
+
+  strong { color: $color-text-primary; }
+
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: $color-surface; }
+  &::-webkit-scrollbar-thumb {
+    background: $color-accent;
+    border-radius: $radius-full;
+  }
+}

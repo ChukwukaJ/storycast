@@ -1,0 +1,42 @@
+@use '../tokens/spacing' as *;
+
+.container {
+  width: 100%;
+  max-width: $max-width-wide;
+  margin-inline: auto;
+  padding-inline: $space-6;
+
+  @media (max-width: 768px) {
+    padding-inline: $space-4;
+  }
+}
+
+.container--narrow {
+  max-width: $max-width-content;
+  margin-inline: auto;
+  padding-inline: $space-6;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-6;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $space-8;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

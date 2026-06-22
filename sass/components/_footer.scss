@@ -1,0 +1,33 @@
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+.site-footer {
+  border-top: 1px solid $color-border;
+  padding-block: $space-12;
+  margin-top: $space-24;
+
+  &__inner {
+    max-width: $max-width-wide;
+    margin-inline: auto;
+    padding-inline: $space-6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $space-4;
+  }
+
+  &__brand {
+    font-family: $font-display;
+    font-size: $text-lg;
+    color: $color-accent;
+    text-decoration: none;
+  }
+
+  &__copy {
+    font-family: $font-mono;
+    font-size: $text-xs;
+    color: $color-text-muted;
+  }
+}

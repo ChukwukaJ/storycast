@@ -1,0 +1,90 @@
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+.card-wrapper {
+  container-type: inline-size;
+  container-name: media-card;
+}
+
+.media-card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-accent;
+  }
+
+  &__badge {
+    display: inline-block;
+    font-family: $font-mono;
+    font-size: $text-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: $space-1 $space-3;
+    border-radius: $radius-full;
+    background: $color-accent;
+    color: $color-bg;
+    margin-bottom: $space-3;
+  }
+
+  &__body {
+    padding: $space-6;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $text-xl;
+    font-weight: $weight-bold;
+    color: $color-text-primary;
+    line-height: $leading-tight;
+    margin-bottom: $space-3;
+  }
+
+  &__meta {
+    font-family: $font-mono;
+    font-size: $text-xs;
+    color: $color-text-muted;
+    display: flex;
+    gap: $space-4;
+    margin-bottom: $space-4;
+  }
+
+  &__excerpt {
+    font-size: $text-sm;
+    color: $color-text-muted;
+    line-height: $leading-loose;
+    margin-bottom: $space-4;
+  }
+
+  &__link {
+    font-size: $text-sm;
+    font-weight: $weight-medium;
+    color: $color-accent;
+    text-decoration: none;
+
+    &::after { content: ' →'; }
+    &:hover { color: $color-accent-alt; }
+  }
+
+  @container media-card (min-width: 500px) {
+    &.media-card--featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .media-card__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .media-card__title {
+        font-size: $text-2xl;
+      }
+    }
+  }
+}

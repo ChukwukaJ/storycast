@@ -1,0 +1,60 @@
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+.hero {
+  padding-block: $space-16 $space-12;
+  border-bottom: 1px solid $color-border;
+
+  &__eyebrow {
+    font-family: $font-mono;
+    font-size: $text-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: $color-accent;
+    margin-bottom: $space-6;
+  }
+
+  &__heading {
+    font-family: $font-display;
+    font-size: clamp(#{$text-3xl}, 6vw, #{$text-5xl});
+    font-weight: $weight-bold;
+    line-height: $leading-tight;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+    margin-bottom: $space-6;
+
+    em {
+      font-style: italic;
+      color: $color-accent;
+    }
+  }
+
+  &__subtext {
+    font-size: $text-lg;
+    color: $color-text-muted;
+    max-width: 55ch;
+    line-height: $leading-loose;
+    margin-bottom: $space-8;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-3;
+    background: $color-accent;
+    color: $color-bg;
+    font-weight: $weight-bold;
+    font-size: $text-sm;
+    text-decoration: none;
+    padding: $space-3 $space-6;
+    border-radius: $radius-full;
+    letter-spacing: 0.03em;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: $color-accent-alt;
+      color: $color-text-primary;
+    }
+  }
+}
