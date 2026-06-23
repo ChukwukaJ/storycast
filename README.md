@@ -1,4 +1,4 @@
-# StoryCast — Accessible Media Microsite
+# StoryCast - Accessible Media Microsite
 
 A 3-page accessible microsite showcasing audio and video storytelling from African creatives and the diaspora. Built with semantic HTML5, Sass, CSS Grid, Flexbox, and container queries. No frameworks.
 
