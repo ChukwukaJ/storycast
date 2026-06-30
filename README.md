@@ -1,3 +1,7 @@
+## Design Mockups
+
+[View Figma Mockups](https://www.figma.com/design/o0K6xat2670qEATOTW7Hh3/Home---Desktop?node-id=0-1&t=8RdVE3qvs2zP571b-1)
+
 # StoryCast — Accessible Media Microsite
 
 A 3-page accessible microsite showcasing audio and video storytelling from African creatives and the diaspora. Built with semantic HTML5, Sass, CSS Grid, Flexbox, and container queries. No frameworks.
